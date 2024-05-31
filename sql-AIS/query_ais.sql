@@ -133,14 +133,14 @@ CREATE TABLE order_details(
 );
 
 -- Insert sample order details
-INSERT INTO order_details(order_id,product_id,quantity)
+INSERT INTO order_details(order_id,product_id,quantity,price)
 VALUES
-(1,4,5),
-(1,10,5),
-(2,1,2),
-(2,10,2),
-(3,2,5),
-(4,8,3),
-(4,3,2);
+(1,4,5,0),
+(1,10,5,0),
+(2,1,2,0),
+(2,10,2,0),
+(3,2,5,0),
+(4,8,3,0),
+(4,3,2,0);
 
 
