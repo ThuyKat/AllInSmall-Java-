@@ -51,7 +51,9 @@
 	<section class="product-section">
 		<c:forEach items="${products}" var="product">
 			<div class="product-container">
-				<img src="assets/banhmi.jpg" alt="">
+			<c:if test="${product.base64Image != null }">
+				<img src="data:image/jpeg;base64,${product.base64Image}" alt="">
+				</c:if>
 				<div class="product-details">
 					<div class="product-name">${product.name}</div>
 					<div class="product-price">$${product.price}</div>

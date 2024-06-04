@@ -31,10 +31,13 @@ public class HomeController {
 
 		if ("SHOW_PRODUCT_BY_CATEGORY".equals(action) && categoryId != 0) {
             products = productRespository.findProductByCategoryId(categoryId);
+          
         }  else if (("SHOW_ALL").equals(action)) {
 			products = productRespository.findAll();
+			
 		} else {
 			products = productRespository.findAll();
+			
 		}
 		model.addAttribute("allCategory", categories);
 		model.addAttribute("products", products);
