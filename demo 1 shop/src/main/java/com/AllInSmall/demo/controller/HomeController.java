@@ -14,7 +14,6 @@ import com.AllInSmall.demo.repository.ProductRepository;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
 
 	@Autowired
@@ -23,7 +22,7 @@ public class HomeController {
 	@Autowired
 	private ProductRepository productRespository;
 
-	@GetMapping()
+	@GetMapping("/index")
 	public String getAllCategories(@RequestParam(required = false) Integer categoryId,
 			@RequestParam(required = false) String action, Model model) {
 		List<Category> categories = categoryRepository.findAll();

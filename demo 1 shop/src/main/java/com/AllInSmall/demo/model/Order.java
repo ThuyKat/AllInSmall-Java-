@@ -2,6 +2,7 @@ package com.AllInSmall.demo.model;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
@@ -21,9 +22,6 @@ public class Order {
 @GeneratedValue(strategy= GenerationType.IDENTITY)
 private int id;
 
-@Column(name="user_id")
-private int userId;
-
 private enum status{placed, completed, ready};
 
 private Date date;
@@ -35,5 +33,8 @@ private float totalPrice;
 @JsonManagedReference
 private List<OrderDetail> orderDetails;
 
-
+@ManyToOne
+@JoinColumn(name="user_id")
+@JsonBackReference
+private User user;
 }
