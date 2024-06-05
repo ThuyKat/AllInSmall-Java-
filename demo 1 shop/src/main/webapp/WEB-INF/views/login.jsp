@@ -38,8 +38,12 @@
 				</c:if>
 				 <a href="index.html" class="mb-5 fs-5">Forgot Password</a>
 				 
+		<!-- 	<button class="login-btn box-shadow border-linear-gad">
+				<a href="/index.jsp" class="perfect-center"> Login </a> 
+			</button> -->
+				 
 			<button class="login-btn box-shadow border-linear-gad">
-				<a href="index.html" class="perfect-center"> Login </a>
+				<input type="submit" value="Login" class="perfect-center" id="sub">
 			</button>
 		</form>
 
