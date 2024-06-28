@@ -12,10 +12,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+@Data // this to generate getter, setter, toString and hashcode, equals
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity // for mapping to db 
 @Table(name="products")
 public class Product {
 @Id
@@ -74,7 +74,9 @@ protected void onCreate() {
 @PreUpdate 
 protected void onUpdate() {
 	modifiedDate = LocalDateTime.now();
-}	
+}
+
+	
 
 
 }

@@ -59,11 +59,9 @@
 					<div class="product-price">$${product.price}</div>
 				</div>
 				<div class="product-quantity">
-					<input type="button" value="-" class="button-minus "
-						data-field="quantity"> <input type="number" step="1"
-						min="0" value="1" name="quantity"
-						class="quantity-field text-center"> <input type="button"
-						value="+" class="button-plus" data-field="quantity">
+					<input type="button" value="-" class="button-minus " data-field="quantity">
+					 <input type="number" step="1" min="0" value="1" name="quantity" class="quantity-field text-center"> 
+					 <input type="button" value="+" class="button-plus" data-field="quantity">
 				</div>
 			</div>
 		</c:forEach>
@@ -71,13 +69,13 @@
 	<footer class="">
 		<!-- <footer class="fixed-bottom"></footer> -->
 		<button class="order-btn">
-			<a href="login.html">Add To Order</a>
+			<a href="/addToOrder">Add To Order</a>
 		</button>
 		<button class="order-btn">
-			<a href="#">View Order</a>
+			<a href="/viewOrder">View Order</a>
 		</button>
 		<button class="order-btn">
-			<a href="#">Reset Order</a>
+			<a href="?action=RESET_ORDER">Reset Order</a>
 		</button>
 	</footer>
 

@@ -1,4 +1,5 @@
 package com.AllInSmall.demo.model;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,8 @@ public class Order {
 @GeneratedValue(strategy= GenerationType.IDENTITY)
 private int id;
 
-private enum status{placed, completed, ready};
+@Enumerated(EnumType.STRING)
+private OrderStatus status;
 
 private Date date;
 
@@ -37,4 +39,11 @@ private List<OrderDetail> orderDetails;
 @JoinColumn(name="user_id")
 @JsonBackReference
 private User user;
+
+
+public void reset() {
+	this.status = null;
+	this.orderDetails = new ArrayList<>();
+	this.totalPrice = 0;
+}
 }

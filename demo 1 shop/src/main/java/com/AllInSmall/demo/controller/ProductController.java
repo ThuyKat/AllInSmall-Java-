@@ -32,7 +32,7 @@ public class ProductController {
     
 	@PostMapping("/product")
 	public String addNewProduct(@RequestParam("productName") String name, @RequestParam("price") float price,
-			@RequestParam("categoryId") Long category_id, @RequestParam("imageData") MultipartFile file) {
+			@RequestParam("categoryId") Integer category_id, @RequestParam("imageData") MultipartFile file) {
 		try {
 			Product product = new Product();
 			product.setName(name);
@@ -40,8 +40,7 @@ public class ProductController {
 			product.setImageData(file.getBytes());
 			product.setImageName(file.getOriginalFilename());
 			product.setCreatedBy("Thao");
-			Category category = categoryRepository.findById(category_id)
-					.orElseThrow(() -> new IllegalArgumentException("Invalid category Id"));
+			Category category = categoryRepository.findById(category_id).orElseThrow(() -> new IllegalArgumentException("Invalid category Id"));
 			product.setCategory(category);
 			productRepository.save(product);
 		} catch (IOException e) {
